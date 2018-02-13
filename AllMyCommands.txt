@@ -1,0 +1,206 @@
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask
+$ git init
+\Initialized empty Git repository in C:/Users/iahmed/Desktop/indTask/.git/
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git add .
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   AllMyCommands.txt
+        new file:   firstFile.txt
+        new file:   secondFile.txt
+        new file:   thirdFile.txt
+
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git rm --cached secondFile.txt
+rm 'secondFile.txt'
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git add .
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   AllMyCommands.txt
+        new file:   firstFile.txt
+        new file:   secondFile.txt
+        new file:   thirdFile.txt
+
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git rm secondFile.txt
+error: the following file has changes staged in the index:
+    secondFile.txt
+(use --cached to keep the file, or -f to force removal)
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git rm -f secondFile.txt
+rm 'secondFile.txt'
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git checkout $commit~1 secondFile.txt
+error: pathspec '~1' did not match any file(s) known to git.
+error: pathspec 'secondFile.txt' did not match any file(s) known to git.
+
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ touch secondFile.txt
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git commit -m 'First commit'
+[master (root-commit) bb59b98] First commit
+ 3 files changed, 16 insertions(+)
+ create mode 100644 AllMyCommands.txt
+ create mode 100644 firstFile.txt
+ create mode 100644 thirdFile.txt
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ ^C
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git remote
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git remote add origin https://github.com/ahmed807/individualTask.git
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git remote
+origin
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git push -u origin master
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 3.19 KiB | 817.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://github.com/ahmed807/individualTask.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git add .
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   secondFile.txt
+
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git commit -m 'commiting after adding the second file'
+[master 3e874d1] commiting after adding the second file
+ 1 file changed, 31 insertions(+)
+ create mode 100644 secondFile.txt
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git add .
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.57 KiB | 805.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/ahmed807/individualTask.git
+   bb59b98..3e874d1  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git branch ReadMe
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git checkout ReadMe
+Switched to branch 'ReadMe'
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (ReadMe)
+$ git add README.md
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (ReadMe)
+$ git status
+On branch ReadMe
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   README.md
+
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (ReadMe)
+$ git checkout master
+Switched to branch 'master'
+A       README.md
+Your branch is up to date with 'origin/master'.
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git checkout ReadMe
+Switched to branch 'ReadMe'
+A       README.md
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (ReadMe)
+$ git commit -m 'added README.md to ReadMe branch'
+[ReadMe bdba0c5] added README.md to ReadMe branch
+ 1 file changed, 7 insertions(+)
+ create mode 100644 README.md
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (ReadMe)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git merge ReadMe
+Updating 3e874d1..bdba0c5
+Fast-forward
+ README.md | 7 +++++++
+ 1 file changed, 7 insertions(+)
+ create mode 100644 README.md
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 434 bytes | 434.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ahmed807/individualTask.git
+   3e874d1..bdba0c5  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+iahmed@iahmed-PC MINGW64 ~/Desktop/indTask (master)
+$
